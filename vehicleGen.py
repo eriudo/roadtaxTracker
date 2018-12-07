@@ -40,17 +40,13 @@ def car_plate():
 
     a3 = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M",
           "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ]
-
-    gen_a1 = random.choice(a1)
-    gen_a2 = random.choice(a2)
-    gen_a3 = random.choice(a3)
-
+    
+    prefix = random.choice(a1) + random.choice(a2) + random.choice(a3)
+    
     gen_num1 = random.randint(0, 9)
     gen_num2 = random.randint(0, 9)
     gen_num3 = random.randint(0, 9)
     gen_num4 = random.randint(0, 9)
-
-    prefix = gen_a1 + gen_a2 + gen_a3
 
     exception = "SKY"
     if prefix == exception:
@@ -67,49 +63,15 @@ def car_plate():
     compute = csalp2 + csalp3 + csnum1 + csnum2 + csnum3 + csnum4
 
     number = str(gen_num1) + str(gen_num2) + str(gen_num3) + str(gen_num4)
-
+    
+    aux = ['A','Z','Y','X','U','T','S','R','P','M','L','K','J','H','G','E','D','C','B']
+    i = 0
     sufix = ''
-
-    if compute % 19 == 0:
-        sufix = 'A'
-    elif compute % 19 == 1:
-        sufix = 'Z'
-    elif compute % 19 == 2:
-        sufix = 'Y'
-    elif compute % 19 == 3:
-        sufix = 'X'
-    elif compute % 19 == 4:
-        sufix = 'U'
-    elif compute % 19 == 5:
-        sufix = 'T'
-    elif compute % 19 == 6:
-        sufix = 'S'
-    elif compute % 19 == 7:
-        sufix = 'R'
-    elif compute % 19 == 8:
-        sufix = 'P'
-    elif compute % 19 == 9:
-        sufix = 'M'
-    elif compute % 19 == 10:
-        sufix = 'L'
-    elif compute % 19 == 11:
-        sufix = 'K'
-    elif compute % 19 == 12:
-        sufix = 'J'
-    elif compute % 19 == 13:
-        sufix = 'H'
-    elif compute % 19 == 14:
-        sufix = 'G'
-    elif compute % 19 == 15:
-        sufix = 'E'
-    elif compute % 19 == 16:
-        sufix = 'D'
-    elif compute % 19 == 17:
-        sufix = 'C'
-    elif compute % 19 == 18:
-        sufix = 'B'
-    else:
-        raise ValueError
+    for i in aux:
+	    if compute % 19 == i:
+	        sufix = aux[i]
+        else:
+            raise ValueError
 
     compete = prefix + number + sufix
     return compete
@@ -128,12 +90,12 @@ def goods_plate():
     gen_a1 = random.choice(a1)
     gen_a2 = random.choice(a2)
 
+    prefix = random.choice(a1) + random.choice(a2)
+    
     gen_num1 = random.randint(0, 9)
     gen_num2 = random.randint(0, 9)
     gen_num3 = random.randint(0, 9)
     gen_num4 = random.randint(0, 9)
-
-    prefix = gen_a1 + gen_a2
 
     csalp2 = 0
     csalp3 = 0
@@ -158,44 +120,14 @@ def goods_plate():
 
     sufix = ''
 
-    if compute % 19 == 0:
-        sufix = 'A'
-    elif compute % 19 == 1:
-        sufix = 'Z'
-    elif compute % 19 == 2:
-        sufix = 'Y'
-    elif compute % 19 == 3:
-        sufix = 'X'
-    elif compute % 19 == 4:
-        sufix = 'U'
-    elif compute % 19 == 5:
-        sufix = 'T'
-    elif compute % 19 == 6:
-        sufix = 'S'
-    elif compute % 19 == 7:
-        sufix = 'R'
-    elif compute % 19 == 8:
-        sufix = 'P'
-    elif compute % 19 == 9:
-        sufix = 'M'
-    elif compute % 19 == 10:
-        sufix = 'L'
-    elif compute % 19 == 11:
-        sufix = 'K'
-    elif compute % 19 == 12:
-        sufix = 'J'
-    elif compute % 19 == 13:
-        sufix = 'H'
-    elif compute % 19 == 14:
-        sufix = 'G'
-    elif compute % 19 == 15:
-        sufix = 'E'
-    elif compute % 19 == 16:
-        sufix = 'D'
-    elif compute % 19 == 17:
-        sufix = 'C'
-    elif compute % 19 == 18:
-        sufix = 'B'
+    aux = ['A','Z','Y','X','U','T','S','R','P','M','L','K','J','H','G','E','D','C','B']
+    i = 0
+    sufix = ''
+    for i in aux:
+	    if compute % 19 == i:
+	        sufix = aux[i]
+        else:
+            raise ValueError
     else:
         raise ValueError
 
