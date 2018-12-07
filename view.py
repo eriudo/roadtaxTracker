@@ -26,10 +26,7 @@ renewed = BooleanVar()
 
 def on_select(data):
     # to impliment multiple selection
-    global vehicle
-    global expiry
-    global new_vehicle_license
-    global new_vehicle_expiry
+    global vehicle, expiry, new_vehicle_license, new_vehicle_expiry
     new_vehicle_expiry.delete(0, END)
     new_vehicle_expiry.insert(END, data[1])
     new_vehicle_license.set_value(data[0])
